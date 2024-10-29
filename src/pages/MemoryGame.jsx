@@ -83,19 +83,19 @@ const MemoryGame = () => {
   };
 
   return (
-    <Grid container minHeight={"100vh"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", background: theme.palette.background.default }}>
+    <Grid container minHeight={"100vh"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", background: 'darkgrey' }}>
       <Grid item xs={12} md={8}>
-        <Paper sx={{ padding: "30px", borderRadius: theme.shape.borderRadius, background: theme.palette.background.paper }}>
+        <Paper sx={{ padding: "30px", borderRadius: theme.shape.borderRadius, background: '#4d4d4d' }}> {/* Darker background for the title block */}
           <Grid container spacing={2} direction="column">
             <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
-              <Typography variant='h3'>Memory Game</Typography>
+              <Typography variant='h3' sx={{ color: 'white' }}>Memory Game</Typography> {/* Title color changed to white for contrast */}
             </Grid>
 
             <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
               <Button variant='contained' size='large' onClick={handleShowInstructions}>
                 Show Instructions
               </Button>
-              <Button variant='contained' size='large' onClick={handleHome} sx={{ marginLeft: 2 }}>
+              <Button variant='contained' size='large' onClick={handleHome} sx={{ marginLeft: 2, backgroundColor: 'red' }}>
                 Home
               </Button>
             </Grid>
