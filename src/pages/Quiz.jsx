@@ -67,11 +67,14 @@ function Quiz() {
     }
   };
 
+  // Set dark slate grey background for the whole quiz
+  const backgroundColor = '#2F4F4F'; // Dark Slate Grey
+
   if (!start) {
     return (
-      <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#310000' }}>
+      <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: backgroundColor }}>
         <Grid item md={6} xs={12}>
-          <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#731010' }}>
+          <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#1e1e1e' }}>
             <Typography variant="h4" textAlign="center" color="primary">Choose a Quiz Category</Typography>
             <Grid container spacing={2} justifyContent="center" marginTop="20px">
               {Object.keys(quizCategories).map((cat) => (
@@ -96,9 +99,9 @@ function Quiz() {
 
   if (quizCompleted) {
     return (
-      <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#310000' }}>
+      <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: backgroundColor }}>
         <Grid item md={6} xs={12}>
-          <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#731010' }}>
+          <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#1e1e1e' }}>
             <Typography variant="h4" color="primary">Quiz Completed!</Typography>
             <Typography variant="h5" color="primary">Your Score: {score}/{questions.length}</Typography>
             <Button fullWidth onClick={restartQuiz} variant="contained" color="primary">Restart</Button>
@@ -125,9 +128,9 @@ function Quiz() {
   }
 
   return (
-    <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#310000' }}>
+    <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: backgroundColor }}>
       <Grid item md={9} xs={12}>
-        <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#731010' }}>
+        <Paper sx={{ borderRadius: '16px', padding: '20px', background: '#1e1e1e' }}>
           <Grid container>
             <Grid item md={12} xs={12} textAlign={'center'}>
               <Typography variant="h3" color="primary">Quiz App - {category}</Typography>
@@ -160,7 +163,7 @@ function Quiz() {
           <Button
             variant="contained"
             color="secondary"
-            onClick={() => {navigate('/Home') ; clickSound.play()}}
+            onClick={() => { navigate('/Home'); clickSound.play(); }}
             sx={{ marginTop: '20px' }}
           >
             Home
